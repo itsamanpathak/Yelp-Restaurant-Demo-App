@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="@dimen/dp10"
+    android:paddingVertical="@dimen/dp5"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/restroImage"
+        android:layout_width="@dimen/dp60"
+        android:layout_height="@dimen/dp60"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:text="Hotel Name"
+        android:textSize="@dimen/sp20"
+        app:layout_constraintStart_toEndOf="@+id/restroImage"
+        app:layout_constraintTop_toTopOf="@+id/restroImage" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="Desc"
+        android:textSize="@dimen/sp15"
+        app:layout_constraintStart_toEndOf="@+id/restroImage"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp10"
+        android:text="Closed"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp12"
+        app:layout_constraintStart_toEndOf="@+id/restroImage"
+        app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+
+    <TextView
+        android:id="@+id/rating"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_width="@dimen/dp40"
+        android:layout_height="@dimen/dp40"
+        android:background="@drawable/rating_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
