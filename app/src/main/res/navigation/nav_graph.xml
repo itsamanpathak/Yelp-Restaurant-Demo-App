@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/restaurantListFragment"
-        android:name="com.amanpathak.yelprestaurantapp.views.RestaurantListFragment"
+        android:name="com.amanpathak.yelprestaurantapp.RestaurantListFragment"
         tools:layout="@layout/fragment_restaurant_list"
         android:label="RestaurantListFragment" />
 </navigation>

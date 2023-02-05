@@ -1,4 +1,4 @@
-package com.amanpathak.yelprestaurantapp.views
+package com.amanpathak.yelprestaurantapp
 
 import android.location.Location
 import androidx.lifecycle.MutableLiveData
@@ -11,15 +11,14 @@ import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
 
-class RestaurantListRepo(private val apiClient: Api) {
+class MainRepo(private val apiClient: Api) {
      val businessList = MutableLiveData<List<Restaurant>>()
 
 
+     fun loadRestaurant(location : Location, radius : String, limit : String, offset : String){
 
-     fun loadRestaurant(location : Location, limit : String, offset : String){
-
-         apiClient.
-        getBusinessAsPerLocation(lat = "${location.latitude}", lon = "${location.longitude}", limit = limit, offset = offset)
+        apiClient.
+        getBusinessAsPerLocation(lat = "${location.latitude}", lon = "${location.longitude}", radius = radius, limit = limit, offset = offset)
             .enqueue(object : retrofit2.Callback<BusinessResponse> {
                 override fun onResponse(
                     call: Call<BusinessResponse>,

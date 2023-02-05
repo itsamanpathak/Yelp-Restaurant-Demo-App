@@ -11,7 +11,8 @@ interface Api {
     @GET("search")
     @Headers("content-type: application/json")
     fun getBusinessAsPerLocation(
-        @Query("sort_by") sortBy: String = "best_match",
+        @Query("radius") radius: String,
+        @Query("sort_by") sortBy: String = "distance",
         @Query("latitude") lat: String?,
         @Query("longitude") lon: String?,
         @Query("limit") limit : String?,
