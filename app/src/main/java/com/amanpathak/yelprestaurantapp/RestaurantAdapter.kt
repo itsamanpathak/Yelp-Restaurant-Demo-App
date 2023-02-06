@@ -21,10 +21,12 @@ class RestaurantAdapter(val utils: Utils, val context: Fragment, private val lis
              val restaurant = data as Restaurant
              item?.name?.text = restaurant.name
              item?.desc?.text = "${utils.convertDistanceToReadableForm(restaurant.distanceInMeter)} | ${restaurant.address}"
-             Glide.with(context).load(restaurant.imageUrl).into(item?.restroImage!!)
+             Glide.with(context).load(restaurant.imageUrl)
+                 .sizeMultiplier(0.3f)
+                 .into(item?.restroImage!!)
 
             restaurant.isClosed?.let {
-                item.status.text = if(it) "Closed" else "Open"
+                item.status.text = if(it) context.getString(R.string.closed) else context.getString(R.string.open)
                 item.status.background = if(it) AppCompatResources.getDrawable(context.requireContext(),R.drawable.closed_status_background) else AppCompatResources.getDrawable(context.requireContext(), R.drawable.open_status_background)
             }
 

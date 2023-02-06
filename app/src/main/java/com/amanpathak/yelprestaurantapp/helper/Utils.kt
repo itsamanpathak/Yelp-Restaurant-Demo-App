@@ -3,6 +3,9 @@ package com.amanpathak.yelprestaurantapp.helper
 import java.text.DecimalFormat
 
 object Utils {
+    private const val MINIMUM_DISTANCE = 100
+    private const val MAXIMUM_DISTANCE = 5000
+    private const val ONE_KILO_METER = 1000
 
 
     fun convertDistanceToReadableForm(meters: Double?) : String{
@@ -10,8 +13,8 @@ object Utils {
 
         val decimalFormat = DecimalFormat("0.#")
 
-        if(meters >= 1000){
-            val km =  meters.div(1000)
+        if(meters >= ONE_KILO_METER){
+            val km =  meters.div(ONE_KILO_METER)
             return "${decimalFormat.format(km).toString()} km"
         }
 
@@ -19,7 +22,7 @@ object Utils {
     }
 
     fun getRadiusSelectorValue(progress : Int) : Int{
-        val value = ((progress/100.0) * 5000).toInt()
-        return if(value < 100) return 100 else value
+        val value = ((progress/100.0) * MAXIMUM_DISTANCE).toInt()
+        return if(value < MINIMUM_DISTANCE) return MINIMUM_DISTANCE else value
     }
 }

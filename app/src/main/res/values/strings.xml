@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">YelpRestaurantApp</string>
+
+    <string name="location_permission_message">Location Permission is required to serve you better</string>
+    <string name="ok_text">OK</string>
+    <string name="deny_text">Deny</string>
+    <string name="based_on_your_location">Based on your Location</string>
+    <string name="default_location_message">Your location is not supported.\nSetting Location to New york City</string>
+    <string name="fetching_location">Fetching Location</string>
+    <string name="newyork">New York City</string>
+    <string name="closed">Closed</string>
+    <string name="open">Open</string>
 </resources>

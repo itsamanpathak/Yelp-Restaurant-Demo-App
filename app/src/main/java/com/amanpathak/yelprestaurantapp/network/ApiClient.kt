@@ -1,6 +1,7 @@
 package com.amanpathak.yelprestaurantapp.network
 
 import android.content.Context
+import com.amanpathak.yelprestaurantapp.BuildConfig
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -16,7 +17,7 @@ class ApiClient (private val context: Context) {
             val client = OkHttpClient.Builder()
                 .addInterceptor {
                     val requestBuilder: Request.Builder = it.request().newBuilder()
-                    requestBuilder.header("Authorization", "Bearer XPFgzKwZGK1yqRxHi0d5xsARFOLpXIvccQj5jekqTnysweGyoIfVUHcH2tPfGq5Oc9kwKHPkcOjk2d1Xobn7aTjOFeop8x41IUfVvg2Y27KiINjYPADcE7Qza0RkX3Yx")
+                    requestBuilder.header("Authorization",  BuildConfig.YelpApiKey)
                     it.proceed(requestBuilder.build())
                 }
                 .addInterceptor(ChuckerInterceptor(context))
