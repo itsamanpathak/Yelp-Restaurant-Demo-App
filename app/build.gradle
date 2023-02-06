@@ -5,6 +5,9 @@ plugins {
     id 'kotlin-kapt'
 }
 
+def API_KEY = '"' + YelpApiKey + '"' ?: '"Api key not found"'
+def STRING = 'String'
+
 android {
     compileSdk 32
 
@@ -20,6 +23,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        each{ type ->
+            type.buildConfigField STRING, 'YelpApiKey', API_KEY
+        }
     }
 
     buildTypes {
@@ -40,6 +47,7 @@ android {
 dependencies {
 
     implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     def nav_version = "2.5.1"
 
     implementation 'androidx.core:core-ktx:1.8.0'
@@ -51,6 +59,7 @@ dependencies {
     implementation ('com.github.bumptech.glide:okhttp3-integration:4.11.0')
     api 'com.squareup.retrofit2:retrofit:2.9.0'
     api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'androidx.core:core-splashscreen:1.0.0'
     debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
     releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
     testImplementation 'junit:junit:4.13.2'

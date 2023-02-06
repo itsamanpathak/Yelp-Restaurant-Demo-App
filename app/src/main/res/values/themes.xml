@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.YelpRestaurantApp" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/red</item>
         <item name="colorPrimaryVariant">@color/grey</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -17,6 +17,11 @@
 
     <style name="textViewStyle" parent="Base.Widget.AppCompat.TextView">
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.YelpRestaurantApp</item>
     </style>
 
 </resources>
